@@ -387,7 +387,7 @@ if st.session_state.game_state == 'start':
     
     if st.button("Start Learning"):
         start_game()
-        st.experimental_rerun()
+        st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
 elif st.session_state.game_state == 'playing':
@@ -413,7 +413,7 @@ elif st.session_state.game_state == 'playing':
         for option in current_question_data['options']:
             if st.button(option, key=option):
                 check_answer(option)
-                st.experimental_rerun()
+                st.rerun()
     
     # If answer has been selected
     else:
@@ -431,7 +431,7 @@ elif st.session_state.game_state == 'playing':
         # Next question button
         if st.button("Next Question"):
             next_question()
-            st.experimental_rerun()
+            st.rerun()
     
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -457,11 +457,11 @@ elif st.session_state.game_state == 'level_complete':
     with col1:
         if st.button("Continue to Next Level"):
             next_level()
-            st.experimental_rerun()
+            st.rerun()
     with col2:
         if st.button("Restart Game", key="restart_level"):
             restart_game()
-            st.experimental_rerun()
+            st.rerun()
     
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -492,7 +492,7 @@ elif st.session_state.game_state == 'game_complete':
     
     if st.button("Play Again"):
         restart_game()
-        st.experimental_rerun()
+        st.rerun()
     
     st.markdown('</div>', unsafe_allow_html=True)
 
